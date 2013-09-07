@@ -1,0 +1,12 @@
+{
+    "autoload":{
+        "classmap": [
+            "./src"
+        ]
+    },
+    "require": {
+        "silex/silex": "1.*",
+        "dflydev/doctrine-orm-service-provider": "*",
+        "doctrine/orm": "2.*"
+    }
+}
