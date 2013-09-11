@@ -4,6 +4,16 @@
 use Dflydev\Silex\Provider\DoctrineOrm\DoctrineOrmServiceProvider;
 use Silex\Provider\DoctrineServiceProvider;
 
+
+$app['mage'] = $app->share( function(){
+    require_once __DIR__ . '/../../base_magento/bootstrap.php';
+    $mageRunCode = isset($_SERVER['MAGE_RUN_CODE']) ? $_SERVER['MAGE_RUN_CODE'] : '';
+    /* Run store or run website */
+    $mageRunType = isset($_SERVER['MAGE_RUN_TYPE']) ? $_SERVER['MAGE_RUN_TYPE'] : 'store';
+    return Mage::App($mageRunCode, $mageRunType, $options);
+});
+
+
 $app->register(new Silex\Provider\DoctrineServiceProvider(), array(
     'db.options' => array(
         'driver'   => 'pdo_sqlite',
@@ -19,8 +29,8 @@ $app->register(new DoctrineOrmServiceProvider, array(
             // Using actual filesystem paths
             array(
                 "type" => "annotation",
-                "namespace" => "Cotya\\YoFo\\Entities",
-                "path" => __DIR__."/Classes/Entities",
+                "namespace" => "Cotya\\YoFo\\Entity",
+                "path" => __DIR__."/Classes/Entity",
             ),
             /*
             array(

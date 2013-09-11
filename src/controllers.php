@@ -14,14 +14,23 @@ $app->get('/yofo/speed', function () {
 $app->get('/yofo/mage-speed', function () use ($app) {
     $output = '';
 
-    $mageApp = $app['mage'];
+
+    /** @var Mage_Core_Model_App $mageApp */
+    $mageApp    = $app['mage'];
+    $mageStore = $mageApp->getStore();
     //Mage::setIsDeveloperMode(true);
 
 
-    $output .= 'hello Magento World<br/>';
+    $output .= 'hello Magento World ('.$mageStore->getCode().')<br/>';
     $output .= '<br/>';
     $output .= 'the silex world';
     $output .= '<br/>';
+    $output .= '<br/>';
+
+    $output .= $mageStore->getFrontendName().'<br/>';
+    $output .= $mageStore->getBaseCurrencyCode().'<br/>';
+    $output .= $mageStore->getBaseUrl().'<br/>';
+
 
     return $output;
 });
