@@ -1,26 +1,24 @@
 
-Caution
-#######
+# Caution
 
 this version will not run on your machine.
 We depend on some crazy nonsense which uses a core modified magento
 
 
-What is this about?
-###################
+# What is this about?
 
 
-## the name?
+### the name?
 
  because of yoke and focusing
 
 
-## What should it be?
+### What should it be?
 
 a Webapplication for tracking, managing and organizing Forks and Patches
 
 
-## Why?
+### Why?
 
 because the Community Work of Magento happens without much interest in the community itself.
 We have Events sponsored and strongly inlfuented by the Company behind Magento,
