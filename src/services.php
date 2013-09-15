@@ -43,4 +43,19 @@ $app->register(new DoctrineOrmServiceProvider, array(
     ),
 ));
 
+/*
+use Rg\Silex\Provider\Markdown\MarkdownServiceProvider;
+
+$app->register(new MarkdownServiceProvider(), array(
+        'md.path' => __DIR__ .'/relative-path-to-markdown-files-directory')
+);
+*/
+
+
+$app->register(new Mustache\Silex\Provider\MustacheServiceProvider, array(
+        'mustache.path' => __DIR__.'/resources/mustache',
+        'mustache.options' => array(
+            'cache' => __DIR__.'/../var/cache/mustache',
+        ),
+    ));
 

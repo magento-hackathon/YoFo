@@ -1,6 +1,9 @@
 <?php
 
 
+
+$app->mount('/yofo/project', require __DIR__.'/controllers/project.php');
+
 $app->get('/yofo/speed', function () {
     $output = '';
 

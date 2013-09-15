@@ -6,6 +6,8 @@
     },
     "require": {
         "silex/silex": "1.*",
+	    "mustache/silex-provider": "1.*",
+	    "ronanguilloux/silexmarkdownserviceprovider": "*",
         "dflydev/doctrine-orm-service-provider": "*",
         "doctrine/orm": "2.*"
     }
